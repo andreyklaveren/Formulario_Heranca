@@ -1,0 +1,48 @@
+﻿<!--Códgo C# inicial-->
+@{
+    Layout = null;
+
+    List<int> numeros = new List<int>();
+    //Preencher a lista com os valores do formulário
+    for(int i = 1; i<=10; i++){
+        numeros.Add(int.Parse(Request.Form["num"+i]));
+    }
+
+    //Inicializar as variaveis com o primeiro numero da lista
+    int maior = numeros.ElementAt(0);
+    int menor = numeros.ElementAt(0);
+
+    foreach (int numero in numeros)
+    {
+        //Buscar o maior numero da lista
+        if (maior < numero)
+        {
+            maior = numero;
+        }
+        //Buscar o menor numero da lista
+        if(menor > numero)
+        {
+            menor = numero;
+        }
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/CSS/style.css">
+    <title>Meu primeiro CSHTML</title>
+</head>
+<body>
+    <div>
+        <!--Sempre que precisar inserir códigos C# no meio do HTML é só inserir um "ARROBA"-->
+        <h1>O menor número digitado é o @menor</h1>
+        <h1>O maior número digitado é o @maior</h1>
+
+        
+        <p><a href="~/Site/maior.cshtml">Voltar para a página inicial</a>
+    </div>
+</body>
+</html>

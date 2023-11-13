@@ -1,0 +1,36 @@
+﻿<!--Iniciando o arquivo CSHTML-->
+<!--Logo abaixo um exemplo de bloco de código C# inserido no arquivo -->
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/CSS/style.css">
+    <title>Cadastro de sala</title>
+</head>
+<body>
+        <div>
+            <h1>Menu</h1>
+            <p>Escolha o que cadastrar</p>
+            <form method="post" action="~/Site/mostrar.cshtml">
+                <table> 
+                    <tr>
+                        <td>
+                            <input name="cadastrarSala" type="radio" /> Cadastrar sala
+                        </td>
+                        <td>
+                            <input name="cadastrarSala" type="radio" /> Cadastrar reserva
+                        </td>
+                        <td class="botao" colspan="2">
+                            <button class="button" type="submit">Cadastrar</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+</body>
+</html>
